@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giovanna Silva — Estrategista de Conteúdo</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --vinho: #6B0F2B;
+    --vinho-deep: #3D0618;
+    --vinho-mid: #8B1A3A;
+    --vinho-light: #A83250;
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+    --cream: #F5F0E8;
+    --white: #FDFBF8;
+    --text-dark: #1A0A10;
+    --text-mid: #4A2030;
+    --text-light: #8A6070;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(253, 251, 248, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(107, 15, 43, 0.08);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--vinho);
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--vinho); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--vinho-deep);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%; right: -10%;
+    width: 60%;
+    height: 130%;
+    background: radial-gradient(ellipse, rgba(169, 50, 80, 0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -10%; left: 5%;
+    width: 40%;
+    height: 60%;
+    background: radial-gradient(ellipse, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 6rem 6rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+
+  .hero-name span {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-role {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--vinho-light);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(245, 240, 232, 0.7);
+    line-height: 1.6;
+    max-width: 420px;
+    margin-bottom: 3rem;
+    border-left: 1px solid var(--gold);
+    padding-left: 1.5rem;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.9rem 2rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    width: fit-content;
+  }
+
+  .hero-cta:hover {
+    background: var(--gold);
+    color: var(--vinho-deep);
+  }
+
+  .hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 6rem 4rem;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    padding: 2rem 1.5rem;
+    transition: border-color 0.3s;
+  }
+
+  .stat-card:hover { border-color: rgba(201, 169, 110, 0.5); }
+
+  .stat-card.full { grid-column: 1 / -1; }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: rgba(245, 240, 232, 0.5);
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+  }
+
+  /* SECTIONS COMMON */
+  section { padding: 7rem 6rem; }
+
+  .section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--vinho-light);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--vinho-light);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    color: var(--vinho-deep);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--vinho-light);
+  }
+
+  /* SOBRE */
+  .sobre {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .sobre-text p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--text-mid);
+    margin-bottom: 1.5rem;
+  }
+
+  .sobre-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sobre-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: var(--white);
+    border-left: 2px solid var(--vinho);
+  }
+
+  .sobre-item-icon {
+    font-size: 1.2rem;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+  }
+
+  .sobre-item-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--vinho);
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+  }
+
+  .sobre-item-text {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  /* METODOLOGIA */
+  .metodologia {
+    background: var(--vinho-deep);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .metodologia::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(ellipse at right, rgba(169, 50, 80, 0.2) 0%, transparent 70%);
+  }
+
+  .metodologia .section-label { color: var(--gold); }
+  .metodologia .section-label::before { background: var(--gold); }
+  .metodologia .section-title { color: var(--white); }
+  .metodologia .section-title em { color: var(--gold-light); }
+
+  .metodologia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .metodo-card {
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .metodo-card:hover {
+    border-color: rgba(201, 169, 110, 0.4);
+    transform: translateY(-4px);
+  }
+
+  .metodo-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgba(201, 169, 110, 0.15);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .metodo-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .metodo-text {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: rgba(245, 240, 232, 0.6);
+  }
+
+  /* CASES */
+  .cases { background: var(--white); }
+
+  .cases-intro {
+    max-width: 600px;
+    margin-bottom: 5rem;
+  }
+
+  .cases-intro p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-top: 1rem;
+  }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .case-card {
+    border: 1px solid rgba(107, 15, 43, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+
+  .case-card:hover {
+    box-shadow: 0 20px 60px rgba(107, 15, 43, 0.1);
+    transform: translateY(-6px);
+  }
+
+  .case-header {
+    background: var(--vinho);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .case-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; right: -30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .case-num {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(201, 169, 110, 0.7);
+    margin-bottom: 0.8rem;
+  }
+
+  .case-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.2;
+  }
+
+  .case-body { padding: 2rem; }
+
+  .case-result {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(107, 15, 43, 0.08);
+  }
+
+  .case-result-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--vinho);
+    line-height: 1;
+  }
+
+  .case-result-label {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    line-height: 1.4;
+  }
+
+  .case-text {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: var(--text-mid);
+  }
+
+  .case-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .case-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--vinho);
+    border: 1px solid rgba(107, 15, 43, 0.2);
+    padding: 0.3rem 0.7rem;
+  }
+
+  /* FERRAMENTAS */
+  .ferramentas {
+    background: var(--cream);
+    text-align: center;
+  }
+
+  .ferramentas .section-label,
+  .ferramentas .section-title { text-align: left; }
+
+  .ferramentas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 3rem;
+    justify-content: center;
+  }
+
+  .ferramenta-pill {
+    padding: 0.7rem 1.5rem;
+    border: 1px solid rgba(107, 15, 43, 0.2);
+    font-size: 0.82rem;
+    color: var(--vinho-deep);
+    background: var(--white);
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    cursor: default;
+  }
+
+  .ferramenta-pill:hover {
+    background: var(--vinho);
+    color: var(--white);
+    border-color: var(--vinho);
+  }
+
+  /* CONTATO */
+  .contato {
+    background: var(--vinho-deep);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contato::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(169, 50, 80, 0.2) 0%, transparent 70%);
+  }
+
+  .contato .section-label {
+    justify-content: center;
+    color: var(--gold);
+  }
+
+  .contato .section-label::before { background: var(--gold); }
+
+  .contato .section-title {
+    color: var(--white);
+    text-align: center;
+  }
+
+  .contato-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: rgba(245, 240, 232, 0.5);
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .contato-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+
+  .contato-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    padding: 2rem 2.5rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    min-width: 200px;
+  }
+
+  .contato-card:hover {
+    background: rgba(201, 169, 110, 0.1);
+    border-color: rgba(201, 169, 110, 0.5);
+    transform: translateY(-4px);
+  }
+
+  .contato-card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .contato-card-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .contato-card-value {
+    font-size: 0.88rem;
+    color: rgba(245, 240, 232, 0.7);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--vinho-deep);
+    border-top: 1px solid rgba(201, 169, 110, 0.1);
+    padding: 2rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: rgba(201, 169, 110, 0.5);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(245, 240, 232, 0.2);
+    letter-spacing: 0.1em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-left > * {
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.55s; }
+  .hero-left > *:nth-child(5) { animation-delay: 0.7s; }
+
+  .hero-right {
+    animation: fadeUp 0.8s ease 0.5s forwards;
+    opacity: 0;
+  }
+
+  @media print {
+    nav { display: none; }
+    section { padding: 4rem 3rem; }
+    .hero { min-height: auto; padding: 6rem 3rem; }
+    .case-card:hover, .metodo-card:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Giovanna Silva</div>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#metodologia">Metodologia</a></li>
+    <li><a href="#cases">Cases</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-left">
+    <div class="hero-tag">Estrategista de Conteúdo</div>
+    <h1 class="hero-name">Giovanna<br><span>Silva</span></h1>
+    <div class="hero-role">SEO · Performance · Crescimento Orgânico</div>
+    <p class="hero-tagline">Dados mostram o caminho. A estratégia faz o público caminhar por ele.</p>
+    <a href="#cases" class="hero-cta">Ver Cases →</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-number">+13K</div>
+        <div class="stat-label">novos inscritos no YouTube via estratégia orgânica</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">+3</div>
+        <div class="stat-label">vendas semanais geradas pelo Instagram</div>
+      </div>
+      <div class="stat-card full">
+        <div class="stat-number">R$ 900K</div>
+        <div class="stat-label">em receita gerada em um único lançamento via estratégia de conteúdo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-text">
+    <div class="section-label">Sobre</div>
+    <h2 class="section-title">Estratégia com<br><em>propósito e dados</em></h2>
+    <p>Sou Estrategista de Conteúdo com foco em performance audiovisual e crescimento orgânico. Atuo no planejamento editorial, validação de pautas via SEO e análise de métricas para otimizar retenção e ampliar alcance.</p>
+    <p>Utilizo Social Listening e análise de comportamento do usuário para identificar tendências e alinhar a produção de conteúdo aos objetivos de negócio — garantindo que cada entrega tenha propósito estratégico e resultado mensurável.</p>
+  </div>
+  <div class="sobre-right">
+    <div class="sobre-item">
+      <div class="sobre-item-icon">🎓</div>
+      <div>
+        <div class="sobre-item-title">Formação</div>
+        <div class="sobre-item-text">Tecnologia em Marketing</div>
+      </div>
+    </div>
+    <div class="sobre-item">
+      <div class="sobre-item-icon">📊</div>
+      <div>
+        <div class="sobre-item-title">MBA em curso</div>
+        <div class="sobre-item-text">Marketing Digital, Growth e Estratégia Data Driven</div>
+      </div>
+    </div>
+    <div class="sobre-item">
+      <div class="sobre-item-icon">🎯</div>
+      <div>
+        <div class="sobre-item-title">Missão</div>
+        <div class="sobre-item-text">Transformar marcas através de uma comunicação estratégica, humana e orientada a resultado.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGIA -->
+<section class="metodologia" id="metodologia">
+  <div class="section-label">Como trabalho</div>
+  <h2 class="section-title">Metodologia de<br><em>Conteúdo Estratégico</em></h2>
+  <div class="metodologia-grid">
+    <div class="metodo-card">
+      <div class="metodo-num">01</div>
+      <div class="metodo-title">Inteligência de Dados</div>
+      <p class="metodo-text">Pesquisa de temas, validação de títulos via SEO e análise de comportamento do usuário para garantir que cada conteúdo existe por uma razão estratégica — antes mesmo de ser produzido.</p>
+    </div>
+    <div class="metodo-card">
+      <div class="metodo-num">02</div>
+      <div class="metodo-title">Retenção & Engajamento</div>
+      <p class="metodo-text">Roteiros estruturados com base na psicologia da atenção, otimizando os primeiros segundos e mantendo o ritmo para maximizar o tempo de visualização e o engajamento real.</p>
+    </div>
+    <div class="metodo-card">
+      <div class="metodo-num">03</div>
+      <div class="metodo-title">Crescimento Orgânico</div>
+      <p class="metodo-text">Social Listening ativo para identificar tendências e demandas do público, transformando insights em calendário editorial e conteúdo que retém, engaja e converte.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="cases" id="cases">
+  <div class="cases-intro">
+    <div class="section-label">Resultados</div>
+    <h2 class="section-title">Cases &<br><em>Resultados Reais</em></h2>
+    <p>Estratégias desenvolvidas e implementadas com foco em crescimento orgânico e geração de resultado mensurável.</p>
+  </div>
+  <div class="cases-grid">
+
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-num">Case 01</div>
+        <div class="case-title">Lançamento de IA Educacional</div>
+      </div>
+      <div class="case-body">
+        <div class="case-result">
+          <div class="case-result-num">R$ 900K</div>
+          <div class="case-result-label">em receita gerada<br>no lançamento</div>
+        </div>
+        <p class="case-text">Participei do desenvolvimento e lançamento de uma ferramenta de IA voltada ao público estudantil, contribuindo com o posicionamento visual, elaboração das copies de divulgação e estratégia de ativação. A ferramenta foi integrada à campanha de Black Friday, resultando na captação de aproximadamente 280 novos alunos.</p>
+        <div class="case-tags">
+          <span class="case-tag">Copywriting</span>
+          <span class="case-tag">Lançamento</span>
+          <span class="case-tag">Black Friday</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-num">Case 02</div>
+        <div class="case-title">Crescimento Orgânico via Instagram</div>
+      </div>
+      <div class="case-body">
+        <div class="case-result">
+          <div class="case-result-num">+3</div>
+          <div class="case-result-label">vendas semanais vindas<br>diretamente do Instagram</div>
+        </div>
+        <p class="case-text">A partir da análise do comportamento do público no direct, identifiquei uma demanda latente por conteúdo de bastidores das aulas. Propus e implementei uma estratégia semanal de stories com trechos reais. Em cerca de 30 dias, o canal registrou aumento consistente de vendas originadas diretamente pelo Instagram.</p>
+        <div class="case-tags">
+          <span class="case-tag">Social Listening</span>
+          <span class="case-tag">Instagram</span>
+          <span class="case-tag">Conversão</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-num">Case 03</div>
+        <div class="case-title">Crescimento de Canal no YouTube</div>
+      </div>
+      <div class="case-body">
+        <div class="case-result">
+          <div class="case-result-num">+30%</div>
+          <div class="case-result-label">de crescimento na base<br>de inscritos (42K → 55K)</div>
+        </div>
+        <p class="case-text">Desenvolvi e implementei uma estratégia de conteúdo em dois formatos complementares: vídeos de dica semanais no canal principal e cortes adaptados para o Shorts na semana seguinte, criando um ciclo de descoberta e retenção que gerou crescimento orgânico consistente.</p>
+        <div class="case-tags">
+          <span class="case-tag">YouTube</span>
+          <span class="case-tag">Shorts</span>
+          <span class="case-tag">Crescimento Orgânico</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FERRAMENTAS -->
+<section class="ferramentas" id="ferramentas">
+  <div class="section-label">Stack</div>
+  <h2 class="section-title">Ferramentas que <em>domino</em></h2>
+  <div class="ferramentas-grid">
+    <span class="ferramenta-pill">YouTube Studio</span>
+    <span class="ferramenta-pill">Google Analytics</span>
+    <span class="ferramenta-pill">Meta Business Suite</span>
+    <span class="ferramenta-pill">SEMrush</span>
+    <span class="ferramenta-pill">Google Trends</span>
+    <span class="ferramenta-pill">Ubersuggest</span>
+    <span class="ferramenta-pill">Notion</span>
+    <span class="ferramenta-pill">Canva</span>
+    <span class="ferramenta-pill">Social Listening</span>
+    <span class="ferramenta-pill">Planejamento Editorial</span>
+    <span class="ferramenta-pill">SEO de Conteúdo</span>
+    <span class="ferramenta-pill">Roteiro para Vídeo</span>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="section-label">Contato</div>
+  <h2 class="section-title">Vamos elevar<br><em>sua estratégia?</em></h2>
+  <p class="contato-sub">Aberta a oportunidades CLT em empresas que valorizem conteúdo orientado a dados.</p>
+  <div class="contato-cards">
+    <a href="https://linkedin.com/in/giovanna-silva440610" target="_blank" class="contato-card">
+      <div class="contato-card-icon">💼</div>
+      <div class="contato-card-label">LinkedIn</div>
+      <div class="contato-card-value">Giovanna Silva</div>
+    </a>
+    <a href="https://wa.me/5511954996649" target="_blank" class="contato-card">
+      <div class="contato-card-icon">💬</div>
+      <div class="contato-card-label">WhatsApp</div>
+      <div class="contato-card-value">(11) 95499-6649</div>
+    </a>
+    <a href="mailto:giovannasilva535@gmail.com" class="contato-card">
+      <div class="contato-card-icon">✉️</div>
+      <div class="contato-card-label">E-mail</div>
+      <div class="contato-card-value">giovannasilva535@gmail.com</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Giovanna Silva</div>
+  <div class="footer-copy">DADOS · ESTRATÉGIA · CRESCIMENTO ORGÂNICO</div>
+</footer>
+
+</body>
+</html>
