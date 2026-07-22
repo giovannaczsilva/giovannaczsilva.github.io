@@ -1,3 +1,4 @@
+index.html
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -105,6 +106,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 8rem 4rem 6rem 6rem;
+    max-width: 680px;
     position: relative;
     z-index: 2;
   }
@@ -337,13 +339,106 @@
   .metodologia .section-title { color: var(--white); }
   .metodologia .section-title em { color: var(--gold-light); }
 
-  .metodologia-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 4rem;
+  .metodologia-intro {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: rgba(245, 240, 232, 0.65);
+    max-width: 680px;
+    margin-top: 1.5rem;
     position: relative;
     z-index: 2;
+  }
+
+  .metodologia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 2rem;
+    margin-top: 3.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .czs-layer {
+    margin-top: 5rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(201, 169, 110, 0.15);
+    position: relative;
+    z-index: 2;
+  }
+
+  .czs-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .czs-label::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .czs-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .czs-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .czs-intro {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.6);
+    max-width: 620px;
+    margin-bottom: 2.5rem;
+  }
+
+  .czs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .czs-card {
+    padding: 1.8rem 1.6rem;
+    background: rgba(201, 169, 110, 0.05);
+    border: 1px solid rgba(201, 169, 110, 0.25);
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .czs-card:hover {
+    border-color: rgba(201, 169, 110, 0.55);
+    transform: translateY(-4px);
+  }
+
+  .czs-card-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+
+  .czs-card-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--gold-light);
   }
 
   .metodo-card {
@@ -572,6 +667,7 @@
     display: flex;
     justify-content: center;
     gap: 1.5rem;
+    margin-top: 3rem;
     flex-wrap: wrap;
     position: relative;
     z-index: 2;
@@ -670,7 +766,6 @@
   <ul class="nav-links">
     <li><a href="#sobre">Sobre</a></li>
     <li><a href="#metodologia">Metodologia</a></li>
-    <li><a href="#cases">Cases</a></li>
     <li><a href="#contato">Contato</a></li>
   </ul>
 </nav>
@@ -678,27 +773,60 @@
 <!-- HERO -->
 <section class="hero" id="inicio">
   <div class="hero-left">
-    <div class="hero-tag">Estrategista de Conteúdo</div>
+    <div class="hero-tag">Social Media &#124;&#124; Estrategista de Conteúdo</div>
     <h1 class="hero-name">Giovanna<br><span>Silva</span></h1>
-    <div class="hero-role">SEO · Performance · Crescimento Orgânico</div>
-    <p class="hero-tagline">Dados mostram o caminho. A estratégia faz o público caminhar por ele.</p>
-    <a href="#cases" class="hero-cta">Ver Cases →</a>
+    <div class="hero-role">Analítica · Criativa · Estratégica</div>
+    <p class="hero-tagline">Onde a criatividade encontra o dado, e a estratégia decide o resto.</p>
+    <a href="#metodologia" class="hero-cta">Ver Metodologia →</a>
   </div>
   <div class="hero-right">
-    <div class="hero-stats">
-      <div class="stat-card">
-        <div class="stat-number">+13K</div>
-        <div class="stat-label">novos inscritos no YouTube via estratégia orgânica</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">+3</div>
-        <div class="stat-label">vendas semanais geradas pelo Instagram</div>
-      </div>
-      <div class="stat-card full">
-        <div class="stat-number">R$ 900K</div>
-        <div class="stat-label">em receita gerada em um único lançamento via estratégia de conteúdo</div>
-      </div>
-    </div>
+    <svg viewBox="0 0 380 640" width="100%" style="max-width:380px; margin:0 auto; display:block;" xmlns="http://www.w3.org/2000/svg">
+      <title>Ornamento Método R.A.I.Z.</title>
+
+      <circle cx="190" cy="330" r="260" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.15" />
+
+      <g fill="none" stroke="var(--gold)" stroke-width="1" stroke-linecap="round" opacity="0.3">
+        <path d="M190,606 C176,624 156,632 132,634" />
+        <path d="M190,606 C204,626 224,634 248,632" />
+      </g>
+
+      <path d="M190,606 C170,470 214,350 182,220 C160,138 202,90 190,44"
+            fill="none" stroke="var(--gold)" stroke-width="1.1" opacity="0.65" />
+
+      <!-- Z -->
+      <g>
+        <path d="M190,598 C182,590 182,580 190,574 C198,580 198,590 190,598 Z" fill="var(--gold)" opacity="0.85" />
+        <path d="M190,592 C172,586 156,584 138,588" fill="none" stroke="var(--gold)" stroke-width="0.8" opacity="0.5" />
+        <text x="126" y="596" text-anchor="end" font-family="Cormorant Garamond, serif" font-style="italic" font-weight="400" font-size="32" fill="var(--gold-light)">Z</text>
+        <text x="126" y="614" text-anchor="end" font-family="DM Sans, sans-serif" font-size="9" letter-spacing="0.18em" fill="var(--gold)" opacity="0.55">ZELAR</text>
+      </g>
+
+      <!-- I -->
+      <g>
+        <path d="M180,432 C172,424 172,414 180,408 C188,414 188,424 180,432 Z" fill="var(--gold)" opacity="0.85" />
+        <path d="M180,420 C200,412 218,409 238,412" fill="none" stroke="var(--gold)" stroke-width="0.8" opacity="0.5" />
+        <text x="250" y="424" text-anchor="start" font-family="Cormorant Garamond, serif" font-style="italic" font-weight="400" font-size="32" fill="var(--gold-light)">I</text>
+        <text x="250" y="442" text-anchor="start" font-family="DM Sans, sans-serif" font-size="9" letter-spacing="0.18em" fill="var(--gold)" opacity="0.55">IDEALIZAR</text>
+      </g>
+
+      <!-- A -->
+      <g>
+        <path d="M199,268 C191,260 191,250 199,244 C207,250 207,260 199,268 Z" fill="var(--gold)" opacity="0.85" />
+        <path d="M199,256 C180,248 162,245 142,248" fill="none" stroke="var(--gold)" stroke-width="0.8" opacity="0.5" />
+        <text x="130" y="260" text-anchor="end" font-family="Cormorant Garamond, serif" font-style="italic" font-weight="400" font-size="32" fill="var(--gold-light)">A</text>
+        <text x="130" y="278" text-anchor="end" font-family="DM Sans, sans-serif" font-size="9" letter-spacing="0.18em" fill="var(--gold)" opacity="0.55">ALINHAR</text>
+      </g>
+
+      <!-- R -->
+      <g>
+        <path d="M190,102 C182,94 182,84 190,78 C198,84 198,94 190,102 Z" fill="var(--gold)" opacity="0.85" />
+        <path d="M190,90 C210,82 228,79 250,82" fill="none" stroke="var(--gold)" stroke-width="0.8" opacity="0.5" />
+        <text x="262" y="94" text-anchor="start" font-family="Cormorant Garamond, serif" font-style="italic" font-weight="400" font-size="32" fill="var(--gold-light)">R</text>
+        <text x="262" y="112" text-anchor="start" font-family="DM Sans, sans-serif" font-size="9" letter-spacing="0.18em" fill="var(--gold)" opacity="0.55">RECONHECER</text>
+      </g>
+
+      <text x="190" y="26" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="17" letter-spacing="0.05em" fill="var(--gold-light)" opacity="0.7">Método R.A.I.Z.</text>
+    </svg>
   </div>
 </section>
 
@@ -706,9 +834,9 @@
 <section class="sobre" id="sobre">
   <div class="sobre-text">
     <div class="section-label">Sobre</div>
-    <h2 class="section-title">Estratégia com<br><em>propósito e dados</em></h2>
-    <p>Sou Estrategista de Conteúdo com foco em performance audiovisual e crescimento orgânico. Atuo no planejamento editorial, validação de pautas via SEO e análise de métricas para otimizar retenção e ampliar alcance.</p>
-    <p>Utilizo Social Listening e análise de comportamento do usuário para identificar tendências e alinhar a produção de conteúdo aos objetivos de negócio — garantindo que cada entrega tenha propósito estratégico e resultado mensurável.</p>
+    <h2 class="section-title">Social Media com<br><em>alma de estrategista</em></h2>
+    <p>Sou Social Media e Estrategista de Conteúdo. Atuo tanto na criação e execução quanto no planejamento por trás dela, porque acredito que uma coisa não existe bem sem a outra: criatividade sem direção se perde, e estratégia sem sensibilidade criativa não conecta com ninguém.</p>
+    <p>Uso Social Listening e análise de comportamento do público para identificar o que realmente conversa com a audiência — e transformo isso em conteúdo que tem apelo criativo, propósito estratégico e resultado mensurável ao mesmo tempo.</p>
   </div>
   <div class="sobre-right">
     <div class="sobre-item">
@@ -738,94 +866,58 @@
 <!-- METODOLOGIA -->
 <section class="metodologia" id="metodologia">
   <div class="section-label">Como trabalho</div>
-  <h2 class="section-title">Metodologia de<br><em>Conteúdo Estratégico</em></h2>
+  <h2 class="section-title">Método<br><em>R.A.I.Z.</em></h2>
+  <p class="metodologia-intro">A estrutura que aplico em todo projeto de conteúdo — uma jornada que começa no fortalecimento de marca e termina em conversação e conversão real, nunca em métrica de vaidade.</p>
   <div class="metodologia-grid">
     <div class="metodo-card">
       <div class="metodo-num">01</div>
-      <div class="metodo-title">Inteligência de Dados</div>
-      <p class="metodo-text">Pesquisa de temas, validação de títulos via SEO e análise de comportamento do usuário para garantir que cada conteúdo existe por uma razão estratégica — antes mesmo de ser produzido.</p>
+      <div class="metodo-title">Reconhecer</div>
+      <p class="metodo-text">Estudo de persona e da linha editorial já existente, mapeando onde a comunicação está e onde ela precisa chegar. Entrega: identidade visual e reconhecimento de marca alinhados a quem realmente consome o conteúdo.</p>
     </div>
     <div class="metodo-card">
       <div class="metodo-num">02</div>
-      <div class="metodo-title">Retenção & Engajamento</div>
-      <p class="metodo-text">Roteiros estruturados com base na psicologia da atenção, otimizando os primeiros segundos e mantendo o ritmo para maximizar o tempo de visualização e o engajamento real.</p>
+      <div class="metodo-title">Alinhar</div>
+      <p class="metodo-text">Verificação personalizada: a persona e a linha editorial estão de fato conversando entre si? É o passo que a maioria pula. Entrega: linha editorial organizada e validada estrategicamente, não apenas esteticamente.</p>
     </div>
     <div class="metodo-card">
       <div class="metodo-num">03</div>
-      <div class="metodo-title">Crescimento Orgânico</div>
-      <p class="metodo-text">Social Listening ativo para identificar tendências e demandas do público, transformando insights em calendário editorial e conteúdo que retém, engaja e converte.</p>
+      <div class="metodo-title">Idealizar</div>
+      <p class="metodo-text">Planejamento de conteúdo estratégico, construído sobre tudo validado nas etapas anteriores. Entrega: calendário editorial e estratégia de distribuição que geram conversação real com a audiência.</p>
+    </div>
+    <div class="metodo-card">
+      <div class="metodo-num">04</div>
+      <div class="metodo-title">Zelar</div>
+      <p class="metodo-text">Análise de métricas feita de forma correta e estratégica — nunca vaidade. Entrega: leads qualificados, conversão e crescimento orgânico, com revisão contínua que realimenta o Reconhecer.</p>
+    </div>
+  </div>
+
+  <div class="czs-layer">
+    <div class="czs-label">Diferencial</div>
+    <h3 class="czs-title">A camada <em>CZS</em></h3>
+    <p class="czs-intro">Em cada etapa do R.A.I.Z., aplico uma pergunta extra que cruza dados pagos, comportamento de funil e SEO — a lente que uso para ir além da execução.</p>
+    <div class="czs-grid">
+      <div class="czs-card">
+        <div class="czs-card-title">Conectar Dados</div>
+        <p class="czs-card-text">O que a mídia paga já revela sobre o que funciona, antes de planejar o orgânico?</p>
+      </div>
+      <div class="czs-card">
+        <div class="czs-card-title">Zoom no Funil</div>
+        <p class="czs-card-text">Onde essa audiência trava de verdade — atenção, consideração ou conversão?</p>
+      </div>
+      <div class="czs-card">
+        <div class="czs-card-title">Sistematizar SEO</div>
+        <p class="czs-card-text">Esse conteúdo também trabalha para busca, ou só para o feed?</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CASES -->
-<section class="cases" id="cases">
-  <div class="cases-intro">
-    <div class="section-label">Resultados</div>
-    <h2 class="section-title">Cases &<br><em>Resultados Reais</em></h2>
-    <p>Estratégias desenvolvidas e implementadas com foco em crescimento orgânico e geração de resultado mensurável.</p>
-  </div>
-  <div class="cases-grid">
 
-    <div class="case-card">
-      <div class="case-header">
-        <div class="case-num">Case 01</div>
-        <div class="case-title">Lançamento de IA Educacional</div>
-      </div>
-      <div class="case-body">
-        <div class="case-result">
-          <div class="case-result-num">R$ 900K</div>
-          <div class="case-result-label">em receita gerada<br>no lançamento</div>
-        </div>
-        <p class="case-text">Participei do desenvolvimento e lançamento de uma ferramenta de IA voltada ao público estudantil, contribuindo com o posicionamento visual, elaboração das copies de divulgação e estratégia de ativação. A ferramenta foi integrada à campanha de Black Friday, resultando na captação de aproximadamente 280 novos alunos.</p>
-        <div class="case-tags">
-          <span class="case-tag">Copywriting</span>
-          <span class="case-tag">Lançamento</span>
-          <span class="case-tag">Black Friday</span>
-        </div>
-      </div>
-    </div>
 
-    <div class="case-card">
-      <div class="case-header">
-        <div class="case-num">Case 02</div>
-        <div class="case-title">Crescimento Orgânico via Instagram</div>
-      </div>
-      <div class="case-body">
-        <div class="case-result">
-          <div class="case-result-num">+3</div>
-          <div class="case-result-label">vendas semanais vindas<br>diretamente do Instagram</div>
-        </div>
-        <p class="case-text">A partir da análise do comportamento do público no direct, identifiquei uma demanda latente por conteúdo de bastidores das aulas. Propus e implementei uma estratégia semanal de stories com trechos reais. Em cerca de 30 dias, o canal registrou aumento consistente de vendas originadas diretamente pelo Instagram.</p>
-        <div class="case-tags">
-          <span class="case-tag">Social Listening</span>
-          <span class="case-tag">Instagram</span>
-          <span class="case-tag">Conversão</span>
-        </div>
-      </div>
-    </div>
+<!-- RESERVADO: bloco Social Media (colagens de ideias) + bloco Análise de Dados
+     entram aqui quando o material for enviado -->
 
-    <div class="case-card">
-      <div class="case-header">
-        <div class="case-num">Case 03</div>
-        <div class="case-title">Crescimento de Canal no YouTube</div>
-      </div>
-      <div class="case-body">
-        <div class="case-result">
-          <div class="case-result-num">+30%</div>
-          <div class="case-result-label">de crescimento na base<br>de inscritos (42K → 55K)</div>
-        </div>
-        <p class="case-text">Desenvolvi e implementei uma estratégia de conteúdo em dois formatos complementares: vídeos de dica semanais no canal principal e cortes adaptados para o Shorts na semana seguinte, criando um ciclo de descoberta e retenção que gerou crescimento orgânico consistente.</p>
-        <div class="case-tags">
-          <span class="case-tag">YouTube</span>
-          <span class="case-tag">Shorts</span>
-          <span class="case-tag">Crescimento Orgânico</span>
-        </div>
-      </div>
-    </div>
 
-  </div>
-</section>
 
 <!-- FERRAMENTAS -->
 <section class="ferramentas" id="ferramentas">
@@ -850,8 +942,7 @@
 <!-- CONTATO -->
 <section class="contato" id="contato">
   <div class="section-label">Contato</div>
-  <h2 class="section-title">Vamos elevar<br><em>sua estratégia?</em></h2>
-  <p class="contato-sub">Aberta a oportunidades CLT em empresas que valorizem conteúdo orientado a dados.</p>
+  <h2 class="section-title">Vamos elevar sua<br>estratégia com<br><em>dados + criatividade?</em></h2>
   <div class="contato-cards">
     <a href="https://linkedin.com/in/giovanna-silva440610" target="_blank" class="contato-card">
       <div class="contato-card-icon">💼</div>
